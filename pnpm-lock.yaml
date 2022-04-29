@@ -3,9 +3,8 @@ lockfileVersion: 5.3
 specifiers:
   '@cloudflare/kv-asset-handler': ~0.2.0
   '@cloudflare/wrangler': ^1.19.12
-  '@esbuild-plugins/node-modules-polyfill': ^0.1.4
   '@vitejs/plugin-react': ^1.2.0
-  esbuild: ^0.14.27
+  build-worker: 0.1.1
   express: ^4.17.3
   miniflare: ^2.3.0
   node-fetch: ^2.6.1
@@ -13,14 +12,13 @@ specifiers:
   react-dom: ^18.1.0
   react-streaming: ^0.1.10
   vite: ^2.8.4
-  vite-plugin-ssr: 0.4.0-beta.13
+  vite-plugin-ssr: 0.3.64
 
 dependencies:
   '@cloudflare/kv-asset-handler': 0.2.0
   '@cloudflare/wrangler': 1.19.12
-  '@esbuild-plugins/node-modules-polyfill': 0.1.4_esbuild@0.14.38
   '@vitejs/plugin-react': 1.3.1
-  esbuild: 0.14.38
+  build-worker: 0.1.1
   express: 4.18.0
   miniflare: 2.4.0
   node-fetch: 2.6.7
@@ -28,7 +26,7 @@ dependencies:
   react-dom: 18.1.0_react@18.1.0
   react-streaming: 0.1.10_react-dom@18.1.0+react@18.1.0
   vite: 2.9.6
-  vite-plugin-ssr: 0.4.0-beta.13_vite@2.9.6
+  vite-plugin-ssr: 0.3.64_vite@2.9.6
 
 packages:
 
@@ -555,25 +553,12 @@ packages:
       - supports-color
     dev: false
 
-  /@zkochan/rimraf/2.1.2:
-    resolution: {integrity: sha512-Lc2oK51J6aQWcLWTloobJun5ZF41BbTDdLvE+aMcexoVWFoFqvZmnZoyXR2IZk6NJEVoZW8tjgtvQLfTsmRs2Q==}
-    engines: {node: '>=12.10'}
-    dependencies:
-      rimraf: 3.0.2
-    dev: false
-
   /accepts/1.3.8:
     resolution: {integrity: sha512-PYAthTa2m2VKxuvSD3DPC/Gy+U+sOA1LAuT8mkmRuvw+NACSaeXEQ+NHcVF7rONl6qcaxV3Uuemwawk+7+SJLw==}
     engines: {node: '>= 0.6'}
     dependencies:
       mime-types: 2.1.35
       negotiator: 0.6.3
-    dev: false
-
-  /acorn/8.7.1:
-    resolution: {integrity: sha512-Xx54uLJQZ19lKygFXOWsscKUbsBZW0CPykPhVQdhIeIwrbPmJzqeASDInc8nKBnp/JT6igTs82qPXz069H8I/A==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
     dev: false
 
   /ansi-styles/3.2.1:
@@ -597,13 +582,6 @@ packages:
 
   /balanced-match/1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
-    dev: false
-
-  /better-path-resolve/1.0.0:
-    resolution: {integrity: sha512-pbnl5XzGBdrFU/wT4jqmJVPn2B6UHPBOhzMQkY/SPUPB6QtUXtmBHBIwCbXJol93mOpGMnQyP/+BB19q04xj7g==}
-    engines: {node: '>=4'}
-    dependencies:
-      is-windows: 1.0.2
     dev: false
 
   /body-parser/1.20.0:
@@ -652,6 +630,14 @@ packages:
 
   /buffer-from/1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
+    dev: false
+
+  /build-worker/0.1.1:
+    resolution: {integrity: sha512-tbh/mnbrRmdgAu7S13WX+evuXJOOAyhJ6F3R12I/4pfe8d809CIszrBHILDNmBIJMIN7Rv+p70BNHsWWUjSJnQ==}
+    hasBin: true
+    dependencies:
+      '@esbuild-plugins/node-modules-polyfill': 0.1.4_esbuild@0.14.38
+      esbuild: 0.14.38
     dev: false
 
   /busboy/0.3.1:
@@ -1283,11 +1269,6 @@ packages:
     engines: {node: '>=0.12.0'}
     dev: false
 
-  /is-windows/1.0.2:
-    resolution: {integrity: sha512-eXK1UInq2bPmjyX6e3VHIzMLobc4J94i4AWn+Hpq3OU5KkrRC96OAcR3PRJ/pGu6m8TRnBHP9dkXQVsT/COVIA==}
-    engines: {node: '>=0.10.0'}
-    dev: false
-
   /isbot-fast/1.2.0:
     resolution: {integrity: sha512-twjuQzy2gKMDVfKGQyQqrx6Uy4opu/fiVUTTpdqtFsd7OQijIp5oXvb27n5EemYXaijh5fomndJt/SPRLsEdSg==}
     engines: {node: '>=6.0.0'}
@@ -1327,13 +1308,6 @@ packages:
 
   /magic-string/0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
-    dependencies:
-      sourcemap-codec: 1.4.8
-    dev: false
-
-  /magic-string/0.26.1:
-    resolution: {integrity: sha512-ndThHmvgtieXe8J/VGPjG+Apu7v7ItcD5mhEIvOscWjPF/ccOiLxHaSuCAS2G+3x4GKsAbT8u7zdyamupui8Tg==}
-    engines: {node: '>=12'}
     dependencies:
       sourcemap-codec: 1.4.8
     dev: false
@@ -1632,13 +1606,6 @@ packages:
       loose-envify: 1.4.0
     dev: false
 
-  /rename-overwrite/4.0.2:
-    resolution: {integrity: sha512-L1sgBgagVgOgb1Z6QZr1yJgSMHI4SXQqAH0l/UbeyHnLKxECvKIlyVEmBo4BqsCAZGg0SBSyjCh68lis5PgC7g==}
-    engines: {node: '>=12.10'}
-    dependencies:
-      '@zkochan/rimraf': 2.1.2
-    dev: false
-
   /resolve/1.22.0:
     resolution: {integrity: sha512-Hhtrw0nLeSrFQ7phPp4OOcVjLPIeMnRlr5mcnVuMe7M/7eBn98A3hmFRLoFo3DLZkivSYwhRUJTyPyWAk56WLw==}
     hasBin: true
@@ -1827,15 +1794,6 @@ packages:
     engines: {node: '>= 0.4'}
     dev: false
 
-  /symlink-dir/5.0.1:
-    resolution: {integrity: sha512-MeXygPBopo8AmyObuCJIpXKT+mw54d2Kp6SBuxq0uXZGDkHwHDQExpSg5+TK8BA5kCGyktawu5DJG0QWYO6acw==}
-    engines: {node: '>=12.10'}
-    hasBin: true
-    dependencies:
-      better-path-resolve: 1.0.0
-      rename-overwrite: 4.0.2
-    dev: false
-
   /tar/6.1.11:
     resolution: {integrity: sha512-an/KZQzQUkZCkuoAA64hM92X0Urb6VpRhAFllDzz44U2mcD5scmT3zBc4VgVpkugF580+DQn8eAFSyoQt0tznA==}
     engines: {node: '>= 10'}
@@ -1877,10 +1835,6 @@ packages:
       mime-types: 2.1.35
     dev: false
 
-  /ufo/0.8.3:
-    resolution: {integrity: sha512-AIkk06G21y/P+NCatfU+1qldCmI0XCszZLn8AkuKotffF3eqCvlce0KuwM7ZemLE/my0GSYADOAeM5zDYWMB+A==}
-    dev: false
-
   /undici/4.13.0:
     resolution: {integrity: sha512-8lk8S/f2V0VUNGf2scU2b+KI2JSzEQLdCyRNRF3XmHu+5jectlSDaPSBCXAHFaUlt1rzngzOBVDgJS9/Gue/KA==}
     engines: {node: '>=12.18'}
@@ -1901,22 +1855,12 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
-  /vite-plugin-dist-importer/0.1.8:
-    resolution: {integrity: sha512-QDUlwEA/ZF24m1KU16F5sFDpiFPQGoOhHHTiALdj/nDZOr84V14+Bvbw3/ITCq3aAq5pvLYNc2OrIKp+o8yp4w==}
+  /vite-plugin-import-build/0.1.3:
+    resolution: {integrity: sha512-N4oRY6Mv5l1qVODcAw1W6Xw1hiW9y8uVs6vqBy0dCTayCu5/7IRmUmjpc+wrBdSS2b/cZYkLX/xHgFyjXlaXtg==}
     dev: false
 
-  /vite-plugin-glob/0.2.6:
-    resolution: {integrity: sha512-DhAxQEXoCVMUxcFZ7bfu8jd7WntXIFGpNo1JK/SoMBCkGgG2NS6QQGVOoq+z1LMsvM0BcAfAxOUof9MH5CNhmg==}
-    dependencies:
-      acorn: 8.7.1
-      fast-glob: 3.2.11
-      magic-string: 0.26.1
-      micromatch: 4.0.5
-      ufo: 0.8.3
-    dev: false
-
-  /vite-plugin-ssr/0.4.0-beta.13_vite@2.9.6:
-    resolution: {integrity: sha512-UQRcU2SWDeyPQQMDlnCpdR0eXDYRzC5dsvZIYFoGnfCI10bHRx7bOTUexUVfwVJm4D0igjHncY+xFjbkB5bMCw==}
+  /vite-plugin-ssr/0.3.64_vite@2.9.6:
+    resolution: {integrity: sha512-4dtQYQo5cZclSEPMDJQdiwNB4PD3kSVWF7GaqfD074nObJH3a5rA0s5tmsHedWZKXO6q3vTXwEffUBvZboim1Q==}
     engines: {node: '>=12.19.0'}
     hasBin: true
     peerDependencies:
@@ -1929,11 +1873,8 @@ packages:
       fast-glob: 3.2.11
       kolorist: 1.5.1
       p-limit: 3.1.0
-      resolve: 1.22.0
-      symlink-dir: 5.0.1
       vite: 2.9.6
-      vite-plugin-dist-importer: 0.1.8
-      vite-plugin-glob: 0.2.6
+      vite-plugin-import-build: 0.1.3
     dev: false
 
   /vite/2.9.6:
