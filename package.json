@@ -26,6 +26,6 @@
     "react-dom": "^18.1.0",
     "react-streaming": "^0.1.10",
     "vite": "^2.8.4",
-    "vite-plugin-ssr": "0.3.64"
+    "vite-plugin-ssr": "0.4.0-beta.14"
   }
 }
